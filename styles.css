@@ -218,7 +218,7 @@ body {
   letter-spacing: -0.04em;
   line-height: 1.08;
 }
-.lead { font-size: 1.06rem; color: rgb(var(--muted)); max-width: 54ch; }
+.lead { font-size: 1.06rem; color: rgb(var(--muted)); max-width: 56ch; }
 
 .cta { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
 
@@ -264,6 +264,8 @@ body {
 }
 .stat__num { font-weight: 800; letter-spacing: -0.02em; }
 .stat__label { color: rgb(var(--muted)); font-size: 0.92rem; margin-top: 2px; }
+
+.hero__card { display: grid; gap: 14px; }
 
 .hero__card .glass {
   border-radius: var(--radius2);
@@ -318,6 +320,37 @@ body {
   text-decoration: none;
 }
 
+/* Headshot card */
+.headshot-card {
+  border-radius: var(--radius2);
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--card) / 0.65);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+.headshot {
+  width: 72px;
+  height: 72px;
+  border-radius: 22px;
+  object-fit: cover;
+  border: 1px solid rgb(var(--border));
+}
+.headshot-fallback {
+  width: 72px;
+  height: 72px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgb(var(--accentA)), rgb(var(--accentB)));
+  color: white;
+  font-weight: 900;
+}
+.headshot-name { font-weight: 900; letter-spacing: -0.02em; }
+
 .scroll-indicator { display: grid; place-items: center; margin-top: 22px; }
 .scroll-indicator__line {
   width: 2px; height: 38px;
@@ -349,6 +382,10 @@ body {
   gap: 14px;
 }
 
+.grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .card {
   border: 1px solid rgb(var(--border));
   border-radius: var(--radius2);
@@ -370,6 +407,16 @@ body {
   color: rgb(var(--muted));
   font-weight: 750;
 }
+
+.impact {
+  margin: 10px 0 10px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--bg) / 0.40);
+  color: rgb(var(--muted));
+}
+.impact strong { color: rgb(var(--text)); }
 
 .bullets { margin: 12px 0 12px; padding-left: 18px; color: rgb(var(--muted)); }
 .bullets li { margin: 6px 0; }
@@ -542,6 +589,7 @@ body {
 .modal__head h3 { margin: 0; letter-spacing: -0.02em; }
 .modal__body { padding: 16px; color: rgb(var(--muted)); }
 .modal__body strong { color: rgb(var(--text)); }
+.modal__body ul { padding-left: 18px; }
 .modal__foot {
   padding: 16px;
   display: flex;
@@ -554,6 +602,7 @@ body {
 @media (max-width: 980px) {
   .hero__grid { grid-template-columns: 1fr; }
   .grid { grid-template-columns: 1fr; }
+  .grid--two { grid-template-columns: 1fr; }
   .skills { grid-template-columns: 1fr; }
   .about { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }

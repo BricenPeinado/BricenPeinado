@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bricen Peinado | CS Portfolio</title>
     <meta
             name="description"
-            content="Personal website and project portfolio for Bricen Peinado — Computer Science student building full-stack and AI applications."
+            content="Personal website and project portfolio for Bricen Peinado — Computer Science student building full-stack and real-time AI applications."
     />
 
     <!-- Open Graph -->
@@ -18,7 +18,10 @@
     <meta property="og:type" content="website" />
 
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23111' d='M32 2l26 15v30L32 62 6 47V17z'/%3E%3Cpath fill='%23fff' d='M24 22h16v4H24zm0 8h16v4H24zm0 8h12v4H24z'/%3E%3C/svg%3E" />
+    <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23111' d='M32 2l26 15v30L32 62 6 47V17z'/%3E%3Cpath fill='%23fff' d='M24 22h16v4H24zm0 8h16v4H24zm0 8h12v4H24z'/%3E%3C/svg%3E"
+    />
 </head>
 
 <body>
@@ -39,6 +42,7 @@
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#about">About</a>
+            <a href="#beyond">Beyond CS</a>
             <a href="#contact">Contact</a>
         </nav>
 
@@ -57,6 +61,7 @@
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#about">About</a>
+            <a href="#beyond">Beyond CS</a>
             <a href="#contact">Contact</a>
             <div class="mobile__divider"></div>
             <a class="pill" href="#contact">Let’s talk</a>
@@ -81,7 +86,7 @@
 
                 <p class="lead">
                     I’m <strong>Bricen Peinado</strong>, a CS student building full-stack apps and real-time AI systems.
-                    Here are my best projects and what I’m working on next.
+                    Below are my flagship projects and a few wins outside CS that show how I execute.
                 </p>
 
                 <div class="cta">
@@ -90,13 +95,23 @@
                 </div>
 
                 <div class="meta">
-                    <a class="meta__link" href="https://github.com/" target="_blank" rel="noreferrer">
+                    <a
+                            class="meta__link"
+                            href="https://github.com/BricenPeinado"
+                            target="_blank"
+                            rel="noreferrer"
+                    >
                         <span aria-hidden="true">↗</span> GitHub
                     </a>
-                    <a class="meta__link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+                    <a
+                            class="meta__link"
+                            href="https://www.linkedin.com/in/bricen-peinado/"
+                            target="_blank"
+                            rel="noreferrer"
+                    >
                         <span aria-hidden="true">↗</span> LinkedIn
                     </a>
-                    <a class="meta__link" href="#" id="resumeLink">
+                    <a class="meta__link" href="./resume.pdf" target="_blank" rel="noreferrer">
                         <span aria-hidden="true">↗</span> Resume (PDF)
                     </a>
                 </div>
@@ -104,7 +119,7 @@
                 <div class="stats">
                     <div class="stat">
                         <div class="stat__num">3</div>
-                        <div class="stat__label">Projects</div>
+                        <div class="stat__label">Core Projects</div>
                     </div>
                     <div class="stat">
                         <div class="stat__num">Full-stack</div>
@@ -160,6 +175,23 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Headshot card -->
+                <div class="headshot-card">
+                    <img
+                            class="headshot"
+                            src="./assets/headshot.jpg"
+                            alt="Headshot of Bricen Peinado"
+                            onerror="this.style.display='none'; document.getElementById('headshotFallback').style.display='grid';"
+                    />
+                    <div class="headshot-fallback" id="headshotFallback" aria-hidden="true" style="display:none;">
+                        <span>BP</span>
+                    </div>
+                    <div class="headshot-meta">
+                        <div class="headshot-name">Bricen Peinado</div>
+                        <div class="muted">Full-stack • AI • Product-minded</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -174,7 +206,7 @@
             <div class="section__head">
                 <h2>Projects</h2>
                 <p class="muted">
-                    A few things I’ve built — optimized for real users, clean UI, and solid engineering.
+                    Built with real product intent: clean UX, scalable structure, and a story that’s easy to evaluate.
                 </p>
             </div>
 
@@ -193,6 +225,11 @@
                             <h3>Speak-Bridge</h3>
                             <span class="tag">AI / Vision</span>
                         </div>
+
+                        <p class="impact">
+                            <strong>Impact:</strong> Designed a real-time ASL translation demo with a low-latency UI that supports fast iteration and clear user feedback.
+                        </p>
+
                         <p class="muted">
                             Real-time ASL → speech translation using camera hand-tracking + streaming inference.
                         </p>
@@ -210,7 +247,14 @@
 
                     <div class="card__actions">
                         <a class="btn btn--small btn--primary" href="#" data-open="speak-bridge">Case study</a>
-                        <a class="btn btn--small btn--ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+                        <a
+                                class="btn btn--small btn--ghost"
+                                href="https://github.com/ibeanny/Speak-Bridge"
+                                target="_blank"
+                                rel="noreferrer"
+                        >
+                            GitHub
+                        </a>
                     </div>
                 </article>
 
@@ -221,6 +265,11 @@
                             <h3>Outfit Oracle</h3>
                             <span class="tag">Full-stack</span>
                         </div>
+
+                        <p class="impact">
+                            <strong>Impact:</strong> Built a multi-provider resale search experience that normalizes listings into a single UI so users can compare faster and buy smarter.
+                        </p>
+
                         <p class="muted">
                             A clothing search aggregator across resale platforms with filters, sorting, and clean cards.
                         </p>
@@ -238,7 +287,14 @@
 
                     <div class="card__actions">
                         <a class="btn btn--small btn--primary" href="#" data-open="outfit-oracle">Case study</a>
-                        <a class="btn btn--small btn--ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+                        <a
+                                class="btn btn--small btn--ghost"
+                                href="https://github.com/BricenPeinado/outfit-oracle"
+                                target="_blank"
+                                rel="noreferrer"
+                        >
+                            GitHub
+                        </a>
                     </div>
                 </article>
 
@@ -246,9 +302,14 @@
                 <article class="card" data-tags="web">
                     <div class="card__top">
                         <div class="card__title">
-                            <h3>Personal Website</h3>
+                            <h3>Portfolio Website</h3>
                             <span class="tag">Web</span>
                         </div>
+
+                        <p class="impact">
+                            <strong>Impact:</strong> Created a fast, polished portfolio designed specifically for transfer applications with clear project narratives and strong presentation.
+                        </p>
+
                         <p class="muted">
                             A polished portfolio to support transfer applications — projects, skills, and contact.
                         </p>
@@ -257,7 +318,7 @@
                     <ul class="bullets">
                         <li>Fast, responsive, and accessible</li>
                         <li>Dark/light theme toggle + subtle motion</li>
-                        <li>Easy to host on GitHub Pages</li>
+                        <li>Simple hosting via GitHub Pages</li>
                     </ul>
 
                     <div class="stack">
@@ -265,8 +326,8 @@
                     </div>
 
                     <div class="card__actions">
-                        <a class="btn btn--small btn--primary" href="#contact">Use it</a>
-                        <a class="btn btn--small btn--ghost" href="#" id="downloadSource">Customize</a>
+                        <a class="btn btn--small btn--primary" href="#contact">Contact</a>
+                        <a class="btn btn--small btn--ghost" href="./resume.pdf" target="_blank" rel="noreferrer">Resume</a>
                     </div>
                 </article>
             </div>
@@ -295,7 +356,7 @@
 
                 <div class="skill">
                     <h3>Backend</h3>
-                    <p class="muted">APIs, data modeling, authentication, caching, reliability.</p>
+                    <p class="muted">APIs, data modeling, authentication, reliability.</p>
                     <div class="pill-row">
                         <span class="pill">Node</span>
                         <span class="pill">Express</span>
@@ -318,13 +379,12 @@
 
             <div class="callout">
                 <div>
-                    <h3>Currently building</h3>
+                    <h3>Currently improving</h3>
                     <p class="muted">
-                        Enhancing my project demos, adding metrics + benchmarks, and improving the “story” of each build
-                        for transfer apps.
+                        Writing stronger case studies (metrics, architecture diagrams, tradeoffs) and hosting cleaner demos for evaluators.
                     </p>
                 </div>
-                <a class="btn btn--ghost" href="#contact">Ask for my resume</a>
+                <a class="btn btn--ghost" href="./resume.pdf" target="_blank" rel="noreferrer">View resume</a>
             </div>
         </div>
     </section>
@@ -358,7 +418,7 @@
                         <div class="timeline__dot"></div>
                         <div>
                             <strong>Next</strong>
-                            <div class="muted">Add live demos + write case studies with results</div>
+                            <div class="muted">Add live demos + quantify results (latency, accuracy, scale)</div>
                         </div>
                     </div>
                 </div>
@@ -375,16 +435,72 @@
                     </div>
 
                     <div class="profile__links">
-                        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-                        <a href="#contact">Email</a>
+                        <a href="https://github.com/BricenPeinado" target="_blank" rel="noreferrer">GitHub</a>
+                        <a href="https://www.linkedin.com/in/bricen-peinado/" target="_blank" rel="noreferrer">LinkedIn</a>
+                        <a href="mailto:bricenpeinado@gmail.com?subject=Portfolio%20Inquiry%20-%20Bricen%20Peinado">Email</a>
                     </div>
 
                     <div class="profile__note">
-                        <strong>Tip for transfer apps:</strong>
-                        put a 1-sentence “impact” line on each project (speed, users, accuracy, scale, demo).
+                        <strong>Transfer-ready format:</strong>
+                        each project includes a clear “why,” key engineering decisions, and long-term direction.
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEYOND CS -->
+    <section class="section" id="beyond">
+        <div class="container">
+            <div class="section__head">
+                <h2>Beyond CS</h2>
+                <p class="muted">
+                    A couple results outside engineering that show consistency, execution, and real-world decision-making.
+                </p>
+            </div>
+
+            <div class="grid grid--two">
+                <article class="card">
+                    <div class="card__top">
+                        <div class="card__title">
+                            <h3>High-Fashion Resale</h3>
+                            <span class="tag">Business</span>
+                        </div>
+                        <p class="impact">
+                            <strong>Result:</strong> Generated <strong>$10,000+</strong> in profit reselling high-fashion pieces, building repeat buyers and international relationships.
+                        </p>
+                        <p class="muted">
+                            Hands-on marketplace execution: sourcing, authentication, pricing strategy, negotiation, shipping, and customer trust.
+                        </p>
+                    </div>
+
+                    <ul class="bullets">
+                        <li>End-to-end operations from sourcing → sale → fulfillment</li>
+                        <li>Pricing and margin decisions under real constraints</li>
+                        <li>Brand knowledge + market timing</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <div class="card__top">
+                        <div class="card__title">
+                            <h3>Personal Investing</h3>
+                            <span class="tag">Finance</span>
+                        </div>
+                        <p class="impact">
+                            <strong>Result:</strong> Grew a <strong>$5,000</strong> stock portfolio to <strong>$6,500+</strong> within ~1 year of starting.
+                        </p>
+                        <p class="muted">
+                            Learning-driven approach: managing risk, tracking performance, and making decisions based on research and discipline.
+                        </p>
+                    </div>
+
+                    <ul class="bullets">
+                        <li>Goal-based strategy + consistent monitoring</li>
+                        <li>Comfortable learning and adapting to new domains</li>
+                        <li>Long-term mindset and execution</li>
+                    </ul>
+                </article>
             </div>
         </div>
     </section>
@@ -395,7 +511,7 @@
             <div class="section__head">
                 <h2>Contact</h2>
                 <p class="muted">
-                    Want the resume PDF, a live demo, or the full repo? Reach out.
+                    Want my resume PDF, a live demo, or the full repo? Reach out.
                 </p>
             </div>
 
@@ -407,33 +523,33 @@
                     <a
                             class="btn btn--primary"
                             id="emailBtn"
-                            href="mailto:YOUR_EMAIL_HERE?subject=Portfolio%20Inquiry%20-%20Bricen%20Peinado"
+                            href="mailto:bricenpeinado@gmail.com?subject=Portfolio%20Inquiry%20-%20Bricen%20Peinado"
                     >
                         Email me
                     </a>
 
                     <div class="contact__mini">
                         <div class="muted">Or copy:</div>
-                        <button class="copy" type="button" data-copy="YOUR_EMAIL_HERE">Copy email</button>
+                        <button class="copy" type="button" data-copy="bricenpeinado@gmail.com">Copy email</button>
                     </div>
                 </div>
 
                 <div class="contact__card">
                     <h3>Links</h3>
                     <div class="link-list">
-                        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-                        <a href="#" id="resumeLink2">Resume (PDF) ↗</a>
+                        <a href="https://github.com/BricenPeinado" target="_blank" rel="noreferrer">GitHub ↗</a>
+                        <a href="https://www.linkedin.com/in/bricen-peinado/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                        <a href="./resume.pdf" target="_blank" rel="noreferrer">Resume (PDF) ↗</a>
                     </div>
                     <p class="muted small">
-                        Replace the links above with your real ones — then you’re ready to submit.
+                        Hosting on GitHub Pages is ideal for transfer apps: stable URL, fast load, simple.
                     </p>
                 </div>
             </div>
 
             <footer class="footer">
                 <div class="muted small">© <span id="year"></span> Bricen Peinado</div>
-                <div class="muted small">Built with HTML/CSS/JS — hosted anywhere</div>
+                <div class="muted small">Built with HTML/CSS/JS — hosted via GitHub Pages</div>
             </footer>
         </div>
     </section>
@@ -449,7 +565,7 @@
         </div>
         <div class="modal__body" id="modalBody"></div>
         <div class="modal__foot">
-            <a class="btn btn--ghost" href="#contact">Ask for demo</a>
+            <a class="btn btn--ghost" href="mailto:bricenpeinado@gmail.com?subject=Portfolio%20Inquiry%20-%20Bricen%20Peinado">Ask for demo</a>
             <button class="btn btn--primary" type="button" id="modalOk">Done</button>
         </div>
     </div>

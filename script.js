@@ -74,28 +74,38 @@ const CASE_STUDIES = {
   "speak-bridge": {
     title: "Speak-Bridge — Real-Time ASL → Speech",
     body: `
+      <p><strong>Impact line:</strong> Designed a real-time ASL translation demo with a low-latency UI that supports fast iteration and clear user feedback.</p>
       <p><strong>Goal:</strong> translate sign language into spoken output in real time, with a usable demo experience.</p>
       <p><strong>How it works:</strong> camera input → hand landmark tracking → classification loop → streaming updates to UI.</p>
+
       <p><strong>Engineering highlights:</strong></p>
       <ul>
         <li>Designed for low-latency feedback so users can correct signs quickly</li>
         <li>Built the UI around clarity: live state, confidence, and next-step prompts</li>
         <li>Modular pipeline so models/logic can be swapped without rewriting the frontend</li>
       </ul>
+
+      <p><strong>Long-term goal:</strong> evolve it into a portable, always-available assistant — eventually leveraging wearable hardware (e.g., glasses-style devices) so the experience works hands-free in real environments.</p>
+
       <p><strong>Next upgrades:</strong> accuracy benchmarks, more gestures, and a clean hosted demo.</p>
     `,
   },
   "outfit-oracle": {
     title: "Outfit Oracle — Resale Search Aggregator",
     body: `
+      <p><strong>Impact line:</strong> Built a multi-provider resale search experience that normalizes listings into a single UI so users can compare faster and buy smarter.</p>
       <p><strong>Goal:</strong> unify fashion resale search results into one clean interface with useful filters and sorting.</p>
       <p><strong>What I built:</strong> multi-provider search that normalizes results into a single card format for fast scanning.</p>
+
       <p><strong>Product decisions:</strong></p>
       <ul>
         <li>UI emphasizes readability and speed (title, price, source, image)</li>
         <li>Filters to match buyer intent: auctions vs buyouts, sort by price/end date</li>
         <li>Provider-agnostic structure so new marketplaces plug in cleanly</li>
       </ul>
+
+      <p><strong>Long-term goal:</strong> layer in AI to help resellers understand the market: pricing intelligence, demand signals, comps, and trend insights — offered as a subscription for power sellers.</p>
+
       <p><strong>Next upgrades:</strong> better ranking, saved searches, and “For You” personalization.</p>
     `,
   },
@@ -133,18 +143,4 @@ modal?.addEventListener("click", (e) => {
 });
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
-});
-
-/* ===== Placeholder buttons ===== */
-$("#downloadSource")?.addEventListener("click", (e) => {
-  e.preventDefault();
-  alert("To customize: update links + email in index.html. Then host on GitHub Pages (steps below).");
-});
-
-const resumeLinks = ["#resumeLink", "#resumeLink2"].map((s) => $(s)).filter(Boolean);
-resumeLinks.forEach((a) => {
-  a.addEventListener("click", (e) => {
-    e.preventDefault();
-    alert("Replace this with your actual resume PDF link (Google Drive direct link, GitHub, or /resume.pdf).");
-  });
 });
