@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bricen Peinado | CS Portfolio</title>
+    <meta
+            name="description"
+            content="Personal website and project portfolio for Bricen Peinado — Computer Science student building full-stack and AI applications."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bricen Peinado | CS Portfolio" />
+    <meta
+            property="og:description"
+            content="Projects, skills, and contact info — full-stack + AI."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23111' d='M32 2l26 15v30L32 62 6 47V17z'/%3E%3Cpath fill='%23fff' d='M24 22h16v4H24zm0 8h16v4H24zm0 8h12v4H24z'/%3E%3C/svg%3E" />
+</head>
+
+<body>
+<div class="bg">
+    <div class="bg__blob bg__blob--a"></div>
+    <div class="bg__blob bg__blob--b"></div>
+    <div class="bg__noise"></div>
+</div>
+
+<header class="header">
+    <div class="container header__inner">
+        <a class="brand" href="#top" aria-label="Home">
+            <span class="brand__mark">BP</span>
+            <span class="brand__text">Bricen Peinado</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header__actions">
+            <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">
+                <span class="icon" aria-hidden="true">☾</span>
+            </button>
+            <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile" id="mobileMenu" aria-hidden="true">
+        <div class="mobile__panel">
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <div class="mobile__divider"></div>
+            <a class="pill" href="#contact">Let’s talk</a>
+        </div>
+    </div>
+</header>
+
+<main id="top">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero__grid">
+            <div class="hero__copy">
+                <div class="kicker">
+                    <span class="dot"></span>
+                    <span>Computer Science • Full-Stack • AI</span>
+                </div>
+
+                <h1>
+                    I build clean, fast products —
+                    <span class="accent">from idea to deployment.</span>
+                </h1>
+
+                <p class="lead">
+                    I’m <strong>Bricen Peinado</strong>, a CS student building full-stack apps and real-time AI systems.
+                    Here are my best projects and what I’m working on next.
+                </p>
+
+                <div class="cta">
+                    <a class="btn btn--primary" href="#projects">View projects</a>
+                    <a class="btn btn--ghost" href="#contact">Contact</a>
+                </div>
+
+                <div class="meta">
+                    <a class="meta__link" href="https://github.com/" target="_blank" rel="noreferrer">
+                        <span aria-hidden="true">↗</span> GitHub
+                    </a>
+                    <a class="meta__link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+                        <span aria-hidden="true">↗</span> LinkedIn
+                    </a>
+                    <a class="meta__link" href="#" id="resumeLink">
+                        <span aria-hidden="true">↗</span> Resume (PDF)
+                    </a>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat__num">3</div>
+                        <div class="stat__label">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat__num">Full-stack</div>
+                        <div class="stat__label">React • Node • MongoDB</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat__num">Real-time</div>
+                        <div class="stat__label">Streaming • Vision • APIs</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__card">
+                <div class="glass">
+                    <div class="glass__top">
+                        <div class="badge">Featured</div>
+                        <div class="chips">
+                            <span class="chip">React</span>
+                            <span class="chip">Node</span>
+                            <span class="chip">AI</span>
+                        </div>
+                    </div>
+
+                    <div class="glass__body">
+                        <h2>Selected work</h2>
+                        <ul class="mini-list">
+                            <li>
+                                <span class="mini-dot"></span>
+                                <div>
+                                    <strong>Speak-Bridge</strong>
+                                    <div class="muted">ASL → speech translation (real-time)</div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="mini-dot"></span>
+                                <div>
+                                    <strong>Outfit Oracle</strong>
+                                    <div class="muted">fashion resale search aggregator</div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="mini-dot"></span>
+                                <div>
+                                    <strong>Personal Website</strong>
+                                    <div class="muted">this portfolio + projects hub</div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="glass__footer">
+                            <a class="pill" href="#projects">Explore projects</a>
+                            <span class="hint">Scroll ↓</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+            <div class="scroll-indicator__line"></div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section__head">
+                <h2>Projects</h2>
+                <p class="muted">
+                    A few things I’ve built — optimized for real users, clean UI, and solid engineering.
+                </p>
+            </div>
+
+            <div class="filters" role="tablist" aria-label="Project filters">
+                <button class="filter is-active" data-filter="all" type="button">All</button>
+                <button class="filter" data-filter="fullstack" type="button">Full-stack</button>
+                <button class="filter" data-filter="ai" type="button">AI / Vision</button>
+                <button class="filter" data-filter="web" type="button">Web</button>
+            </div>
+
+            <div class="grid" id="projectGrid">
+                <!-- Speak-Bridge -->
+                <article class="card" data-tags="ai fullstack">
+                    <div class="card__top">
+                        <div class="card__title">
+                            <h3>Speak-Bridge</h3>
+                            <span class="tag">AI / Vision</span>
+                        </div>
+                        <p class="muted">
+                            Real-time ASL → speech translation using camera hand-tracking + streaming inference.
+                        </p>
+                    </div>
+
+                    <ul class="bullets">
+                        <li>Live camera pipeline + low-latency updates</li>
+                        <li>Classification loop designed for real-time feedback</li>
+                        <li>Practical UI for demos + usability</li>
+                    </ul>
+
+                    <div class="stack">
+                        <span>React</span><span>MediaPipe</span><span>FastAPI</span><span>Streaming</span>
+                    </div>
+
+                    <div class="card__actions">
+                        <a class="btn btn--small btn--primary" href="#" data-open="speak-bridge">Case study</a>
+                        <a class="btn btn--small btn--ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+                    </div>
+                </article>
+
+                <!-- Outfit Oracle -->
+                <article class="card" data-tags="fullstack web">
+                    <div class="card__top">
+                        <div class="card__title">
+                            <h3>Outfit Oracle</h3>
+                            <span class="tag">Full-stack</span>
+                        </div>
+                        <p class="muted">
+                            A clothing search aggregator across resale platforms with filters, sorting, and clean cards.
+                        </p>
+                    </div>
+
+                    <ul class="bullets">
+                        <li>Multi-provider search with normalized results</li>
+                        <li>Filters (auctions/buyouts), price sorting, end-date sorting</li>
+                        <li>Designed for fashion discovery with fast scanning UI</li>
+                    </ul>
+
+                    <div class="stack">
+                        <span>Node</span><span>Express</span><span>React</span><span>MongoDB</span>
+                    </div>
+
+                    <div class="card__actions">
+                        <a class="btn btn--small btn--primary" href="#" data-open="outfit-oracle">Case study</a>
+                        <a class="btn btn--small btn--ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+                    </div>
+                </article>
+
+                <!-- Personal Website -->
+                <article class="card" data-tags="web">
+                    <div class="card__top">
+                        <div class="card__title">
+                            <h3>Personal Website</h3>
+                            <span class="tag">Web</span>
+                        </div>
+                        <p class="muted">
+                            A polished portfolio to support transfer applications — projects, skills, and contact.
+                        </p>
+                    </div>
+
+                    <ul class="bullets">
+                        <li>Fast, responsive, and accessible</li>
+                        <li>Dark/light theme toggle + subtle motion</li>
+                        <li>Easy to host on GitHub Pages</li>
+                    </ul>
+
+                    <div class="stack">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+
+                    <div class="card__actions">
+                        <a class="btn btn--small btn--primary" href="#contact">Use it</a>
+                        <a class="btn btn--small btn--ghost" href="#" id="downloadSource">Customize</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section__head">
+                <h2>Skills</h2>
+                <p class="muted">What I’m confident building with right now.</p>
+            </div>
+
+            <div class="skills">
+                <div class="skill">
+                    <h3>Frontend</h3>
+                    <p class="muted">React, UI design systems, responsive layouts, performance.</p>
+                    <div class="pill-row">
+                        <span class="pill">React</span>
+                        <span class="pill">Vite</span>
+                        <span class="pill">Tailwind</span>
+                        <span class="pill">Accessibility</span>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <h3>Backend</h3>
+                    <p class="muted">APIs, data modeling, authentication, caching, reliability.</p>
+                    <div class="pill-row">
+                        <span class="pill">Node</span>
+                        <span class="pill">Express</span>
+                        <span class="pill">MongoDB</span>
+                        <span class="pill">REST</span>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <h3>AI / Systems</h3>
+                    <p class="muted">Real-time pipelines, streaming, practical ML integration.</p>
+                    <div class="pill-row">
+                        <span class="pill">MediaPipe</span>
+                        <span class="pill">FastAPI</span>
+                        <span class="pill">SSE/WebSockets</span>
+                        <span class="pill">Python</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout">
+                <div>
+                    <h3>Currently building</h3>
+                    <p class="muted">
+                        Enhancing my project demos, adding metrics + benchmarks, and improving the “story” of each build
+                        for transfer apps.
+                    </p>
+                </div>
+                <a class="btn btn--ghost" href="#contact">Ask for my resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+        <div class="container about">
+            <div class="about__left">
+                <h2>About</h2>
+                <p class="muted">
+                    I like building products that feel premium: fast UX, clean UI, and engineering decisions that hold up.
+                    I’m especially interested in full-stack systems and real-time AI experiences.
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div>
+                            <strong>Focus</strong>
+                            <div class="muted">Full-stack apps • AI demos • strong portfolio for transfer</div>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div>
+                            <strong>Strengths</strong>
+                            <div class="muted">Product thinking, speed, iteration, clean UI</div>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div>
+                            <strong>Next</strong>
+                            <div class="muted">Add live demos + write case studies with results</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about__right">
+                <div class="profile">
+                    <div class="profile__avatar" aria-hidden="true">
+                        <span>BP</span>
+                    </div>
+                    <div class="profile__meta">
+                        <div class="profile__name">Bricen Peinado</div>
+                        <div class="muted">Computer Science</div>
+                    </div>
+
+                    <div class="profile__links">
+                        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+                        <a href="#contact">Email</a>
+                    </div>
+
+                    <div class="profile__note">
+                        <strong>Tip for transfer apps:</strong>
+                        put a 1-sentence “impact” line on each project (speed, users, accuracy, scale, demo).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section__head">
+                <h2>Contact</h2>
+                <p class="muted">
+                    Want the resume PDF, a live demo, or the full repo? Reach out.
+                </p>
+            </div>
+
+            <div class="contact">
+                <div class="contact__card">
+                    <h3>Message</h3>
+                    <p class="muted">This opens your email app with a prefilled subject.</p>
+
+                    <a
+                            class="btn btn--primary"
+                            id="emailBtn"
+                            href="mailto:YOUR_EMAIL_HERE?subject=Portfolio%20Inquiry%20-%20Bricen%20Peinado"
+                    >
+                        Email me
+                    </a>
+
+                    <div class="contact__mini">
+                        <div class="muted">Or copy:</div>
+                        <button class="copy" type="button" data-copy="YOUR_EMAIL_HERE">Copy email</button>
+                    </div>
+                </div>
+
+                <div class="contact__card">
+                    <h3>Links</h3>
+                    <div class="link-list">
+                        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                        <a href="#" id="resumeLink2">Resume (PDF) ↗</a>
+                    </div>
+                    <p class="muted small">
+                        Replace the links above with your real ones — then you’re ready to submit.
+                    </p>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="muted small">© <span id="year"></span> Bricen Peinado</div>
+                <div class="muted small">Built with HTML/CSS/JS — hosted anywhere</div>
+            </footer>
+        </div>
+    </section>
+</main>
+
+<!-- MODAL -->
+<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__backdrop" data-close="true"></div>
+    <div class="modal__panel" role="document" aria-label="Project details">
+        <div class="modal__head">
+            <h3 id="modalTitle">Project</h3>
+            <button class="icon-btn" id="modalClose" type="button" aria-label="Close modal">✕</button>
+        </div>
+        <div class="modal__body" id="modalBody"></div>
+        <div class="modal__foot">
+            <a class="btn btn--ghost" href="#contact">Ask for demo</a>
+            <button class="btn btn--primary" type="button" id="modalOk">Done</button>
+        </div>
+    </div>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
