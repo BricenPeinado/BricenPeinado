@@ -1,146 +1,155 @@
-const $ = (sel, root = document) => root.querySelector(sel);
-const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+const $ = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
-/* ===== Theme ===== */
 const themeToggle = $("#themeToggle");
-const setTheme = (t) => {
-  document.documentElement.setAttribute("data-theme", t);
-  localStorage.setItem("theme", t);
-  $(".icon", themeToggle).textContent = t === "light" ? "☼" : "☾";
+const themeIcon = $(".theme-icon", themeToggle);
+
+const setTheme = (theme) => {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  const isDark = theme === "dark";
+  themeIcon.textContent = isDark ? "Light" : "Dark";
+  themeToggle.setAttribute("aria-label", `Switch to ${isDark ? "light" : "dark"} theme`);
 };
+
 const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light" || savedTheme === "dark") setTheme(savedTheme);
+if (savedTheme === "light" || savedTheme === "dark") {
+  setTheme(savedTheme);
+}
 
 themeToggle?.addEventListener("click", () => {
-  const current = document.documentElement.getAttribute("data-theme") || "dark";
+  const current = document.documentElement.getAttribute("data-theme") || "light";
   setTheme(current === "dark" ? "light" : "dark");
 });
 
-/* ===== Mobile menu ===== */
-const menuBtn = $("#menuBtn");
+const menuButton = $("#menuBtn");
 const mobileMenu = $("#mobileMenu");
-const toggleMobile = (open) => {
+
+const toggleMobileMenu = (open) => {
   const isOpen = open ?? !mobileMenu.classList.contains("is-open");
   mobileMenu.classList.toggle("is-open", isOpen);
   mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+  menuButton.textContent = isOpen ? "Close" : "Menu";
 };
-menuBtn?.addEventListener("click", () => toggleMobile());
-$$(".mobile__panel a").forEach((a) => a.addEventListener("click", () => toggleMobile(false)));
 
-/* ===== Footer year ===== */
+menuButton?.addEventListener("click", () => toggleMobileMenu());
+$$(".mobile-menu a").forEach((link) => {
+  link.addEventListener("click", () => toggleMobileMenu(false));
+});
+
 $("#year").textContent = new Date().getFullYear();
 
-/* ===== Copy email ===== */
-$$("[data-copy]").forEach((btn) => {
-  btn.addEventListener("click", async () => {
-    const text = btn.getAttribute("data-copy");
+$$("[data-copy]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const value = button.getAttribute("data-copy");
     try {
-      await navigator.clipboard.writeText(text);
-      const old = btn.textContent;
-      btn.textContent = "Copied ✓";
-      setTimeout(() => (btn.textContent = old), 1200);
+      await navigator.clipboard.writeText(value);
+      const previousText = button.textContent;
+      button.textContent = "Email copied";
+      setTimeout(() => {
+        button.textContent = previousText;
+      }, 1400);
     } catch {
-      alert("Copy failed — you can manually select and copy.");
+      window.location.href = `mailto:${value}`;
     }
   });
 });
 
-/* ===== Project filter ===== */
 const filters = $$(".filter");
-const cards = $$("#projectGrid .card");
+const projectCards = $$("#projectGrid .project");
 
-filters.forEach((f) => {
-  f.addEventListener("click", () => {
-    filters.forEach((x) => x.classList.remove("is-active"));
-    f.classList.add("is-active");
-    const tag = f.dataset.filter;
+filters.forEach((filter) => {
+  filter.addEventListener("click", () => {
+    filters.forEach((item) => {
+      const active = item === filter;
+      item.classList.toggle("is-active", active);
+      item.setAttribute("aria-selected", String(active));
+    });
 
-    cards.forEach((c) => {
-      const tags = (c.dataset.tags || "").split(/\s+/).filter(Boolean);
-      const show = tag === "all" ? true : tags.includes(tag);
-      c.style.display = show ? "block" : "none";
+    const selectedTag = filter.dataset.filter;
+    projectCards.forEach((card) => {
+      const tags = (card.dataset.tags || "").split(/\s+/).filter(Boolean);
+      card.hidden = selectedTag !== "all" && !tags.includes(selectedTag);
     });
   });
 });
 
-/* ===== Modal / Case studies ===== */
-const modal = $("#modal");
-const modalTitle = $("#modalTitle");
-const modalBody = $("#modalBody");
-const modalClose = $("#modalClose");
-const modalOk = $("#modalOk");
-
-const CASE_STUDIES = {
-  "speak-bridge": {
-    title: "Speak-Bridge — Real-Time ASL → Speech",
+const caseStudies = {
+  closetsearch: {
+    title: "ClosetSearch",
     body: `
-      <p><strong>Impact line:</strong> Designed a real-time ASL translation demo with a low-latency UI that supports fast iteration and clear user feedback.</p>
-      <p><strong>Goal:</strong> translate sign language into spoken output in real time, with a usable demo experience.</p>
-      <p><strong>How it works:</strong> camera input → hand landmark tracking → classification loop → streaming updates to UI.</p>
-
-      <p><strong>Engineering highlights:</strong></p>
+      <p><strong>The idea:</strong> Make resale discovery feel like a focused fashion product—not a spreadsheet of marketplace results.</p>
+      <p><strong>What I built:</strong> A documentation-led TypeScript monorepo with a React web app, an API boundary, shared listing and user models, provider adapters, cookie-backed authentication, and local SQLite persistence.</p>
+      <p><strong>Intelligence layer:</strong></p>
       <ul>
-        <li>Designed for low-latency feedback so users can correct signs quickly</li>
-        <li>Built the UI around clarity: live state, confidence, and next-step prompts</li>
-        <li>Modular pipeline so models/logic can be swapped without rewriting the frontend</li>
+        <li>Explainable personalization from onboarding choices, likes, saved searches, filters, watchlists, and preferred sources</li>
+        <li>Observed-data pricing ranges and cautious under-market context without pretending to forecast prices</li>
+        <li>An alert-ready matcher that connects saved intent to relevant listings</li>
       </ul>
-
-      <p><strong>Long-term goal:</strong> evolve it into a portable, always-available assistant — eventually leveraging wearable hardware (e.g., glasses-style devices) so the experience works hands-free in real environments.</p>
-
-      <p><strong>Next upgrades:</strong> accuracy benchmarks, more gestures, and a clean hosted demo.</p>
+      <p><strong>Why it matters to me:</strong> ClosetSearch connects my experience in fashion resale with full-stack engineering and my interest in careful, useful ML-driven product features.</p>
+      <p><strong>Current boundary:</strong> It is a constrained preview release candidate. Real provider coverage and deeper ML recommendations are the next major steps.</p>
     `,
   },
-  "outfit-oracle": {
-    title: "Outfit Oracle — Resale Search Aggregator",
+  "speak-bridge": {
+    title: "Speak-Bridge",
     body: `
-      <p><strong>Impact line:</strong> Built a multi-provider resale search experience that normalizes listings into a single UI so users can compare faster and buy smarter.</p>
-      <p><strong>Goal:</strong> unify fashion resale search results into one clean interface with useful filters and sorting.</p>
-      <p><strong>What I built:</strong> multi-provider search that normalizes results into a single card format for fast scanning.</p>
-
-      <p><strong>Product decisions:</strong></p>
+      <p><strong>The idea:</strong> Explore how computer vision can reduce a communication barrier by translating ASL gestures into spoken output in real time.</p>
+      <p><strong>System flow:</strong> Live camera input feeds hand-landmark tracking, a classification loop, and streaming interface updates.</p>
+      <p><strong>Engineering decisions:</strong></p>
       <ul>
-        <li>UI emphasizes readability and speed (title, price, source, image)</li>
-        <li>Filters to match buyer intent: auctions vs buyouts, sort by price/end date</li>
-        <li>Provider-agnostic structure so new marketplaces plug in cleanly</li>
+        <li>Keep the model pipeline modular so components can improve without rewriting the interface</li>
+        <li>Design for low-latency feedback so users can correct a sign quickly</li>
+        <li>Surface live state and confidence instead of hiding uncertainty</li>
       </ul>
-
-      <p><strong>Long-term goal:</strong> layer in AI to help resellers understand the market: pricing intelligence, demand signals, comps, and trend insights — offered as a subscription for power sellers.</p>
-
-      <p><strong>Next upgrades:</strong> better ranking, saved searches, and “For You” personalization.</p>
+      <p><strong>What I learned:</strong> A model is only one part of an AI product. Input quality, latency, feedback, and interface design determine whether the system is actually usable.</p>
+      <p><strong>Next questions:</strong> Broader gesture coverage, accuracy benchmarks, and testing in more realistic settings.</p>
     `,
   },
 };
 
+const modal = $("#modal");
+const modalTitle = $("#modalTitle");
+const modalBody = $("#modalBody");
+const modalClose = $("#modalClose");
+const modalDone = $("#modalOk");
+let lastFocusedElement = null;
+
 const openModal = (key) => {
-  const data = CASE_STUDIES[key];
-  if (!data) return;
+  const study = caseStudies[key];
+  if (!study) return;
 
-  modalTitle.textContent = data.title;
-  modalBody.innerHTML = data.body;
-
+  lastFocusedElement = document.activeElement;
+  modalTitle.textContent = study.title;
+  modalBody.innerHTML = study.body;
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+  modalClose.focus();
 };
 
 const closeModal = () => {
   modal.classList.remove("is-open");
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
+  lastFocusedElement?.focus();
 };
 
-$$("[data-open]").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    openModal(btn.getAttribute("data-open"));
+$$("[data-open]").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    openModal(button.getAttribute("data-open"));
   });
 });
 
 modalClose?.addEventListener("click", closeModal);
-modalOk?.addEventListener("click", closeModal);
-modal?.addEventListener("click", (e) => {
-  if (e.target?.getAttribute?.("data-close") === "true") closeModal();
+modalDone?.addEventListener("click", closeModal);
+modal?.addEventListener("click", (event) => {
+  if (event.target?.getAttribute?.("data-close") === "true") closeModal();
 });
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && modal.classList.contains("is-open")) {
+    closeModal();
+  }
 });

@@ -1,0 +1,5 @@
+dist/
+tmp/
+.DS_Store
+assets/og-source.png
+assets/og-cropped.png
