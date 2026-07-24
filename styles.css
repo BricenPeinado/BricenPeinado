@@ -675,6 +675,68 @@ button:focus-visible {
   color: var(--ink-soft);
 }
 
+.background-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 90px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.background-column {
+  padding: 36px 54px 40px 0;
+}
+
+.background-column + .background-column {
+  padding-right: 0;
+  padding-left: 54px;
+  border-left: 1px solid var(--line);
+}
+
+.record {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.record:last-of-type {
+  border-bottom: 0;
+}
+
+.record-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.record-heading h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.record-heading span {
+  flex: 0 0 auto;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.record p {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+}
+
+.record-detail {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
 .beyond-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -830,6 +892,7 @@ button:focus-visible {
   .section-heading,
   .research-grid,
   .about-grid,
+  .background-grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -866,6 +929,16 @@ button:focus-visible {
   .research-grid,
   .about-grid {
     gap: 60px;
+  }
+
+  .background-column,
+  .background-column + .background-column {
+    padding: 36px 0 40px;
+    border-left: 0;
+  }
+
+  .background-column + .background-column {
+    border-top: 1px solid var(--line);
   }
 
   .skill-grid {
@@ -980,6 +1053,15 @@ button:focus-visible {
   .principles > div {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .record-heading {
+    display: block;
+  }
+
+  .record-heading span {
+    display: block;
+    margin-top: 7px;
   }
 
   .footer {

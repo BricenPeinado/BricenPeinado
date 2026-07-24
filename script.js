@@ -79,28 +79,28 @@ const caseStudies = {
   closetsearch: {
     title: "ClosetSearch",
     body: `
-      <p><strong>The idea:</strong> Make resale discovery feel like a focused fashion product—not a spreadsheet of marketplace results.</p>
-      <p><strong>What I built:</strong> A documentation-led TypeScript monorepo with a React web app, an API boundary, shared listing and user models, provider adapters, cookie-backed authentication, and local SQLite persistence.</p>
+      <p><strong>The idea:</strong> Turn fragmented fashion resale listings into comparable market intelligence for active buyers and sellers.</p>
+      <p><strong>What I built:</strong> A multi-marketplace pipeline that normalizes listings across brands, categories, conditions, sizes, and providers.</p>
       <p><strong>Intelligence layer:</strong></p>
       <ul>
-        <li>Explainable personalization from onboarding choices, likes, saved searches, filters, watchlists, and preferred sources</li>
-        <li>Observed-data pricing ranges and cautious under-market context without pretending to forecast prices</li>
-        <li>An alert-ready matcher that connects saved intent to relevant listings</li>
+        <li>Developing ML-driven fair-value estimates from comparable listing data</li>
+        <li>Detecting pricing anomalies and identifying trend signals</li>
+        <li>Surfacing potential resale opportunities for a close-knit fashion community</li>
       </ul>
-      <p><strong>Why it matters to me:</strong> ClosetSearch connects my experience in fashion resale with full-stack engineering and my interest in careful, useful ML-driven product features.</p>
-      <p><strong>Current boundary:</strong> It is a constrained preview release candidate. Real provider coverage and deeper ML recommendations are the next major steps.</p>
+      <p><strong>Stack:</strong> React, Node.js, Express, and MongoDB.</p>
+      <p><strong>Why it matters to me:</strong> ClosetSearch connects my experience in fashion resale with full-stack engineering and applied machine learning.</p>
     `,
   },
   "speak-bridge": {
     title: "Speak-Bridge",
     body: `
       <p><strong>The idea:</strong> Explore how computer vision can reduce a communication barrier by translating ASL gestures into spoken output in real time.</p>
-      <p><strong>System flow:</strong> Live camera input feeds hand-landmark tracking, a classification loop, and streaming interface updates.</p>
+      <p><strong>System flow:</strong> Webcam frames stream through hand-landmark detection and AI-based interpretation, returning structured sign hypotheses, confidence scores, and visual cues.</p>
       <p><strong>Engineering decisions:</strong></p>
       <ul>
-        <li>Keep the model pipeline modular so components can improve without rewriting the interface</li>
-        <li>Design for low-latency feedback so users can correct a sign quickly</li>
-        <li>Surface live state and confidence instead of hiding uncertainty</li>
+        <li>Implemented FastAPI streaming endpoints and live landmark overlays</li>
+        <li>Designed frontend state handling for responsive, low-latency feedback</li>
+        <li>Added fallbacks for image-processing and API failures</li>
       </ul>
       <p><strong>What I learned:</strong> A model is only one part of an AI product. Input quality, latency, feedback, and interface design determine whether the system is actually usable.</p>
       <p><strong>Next questions:</strong> Broader gesture coverage, accuracy benchmarks, and testing in more realistic settings.</p>
